@@ -213,6 +213,20 @@ public class TentacleCurveIK : MonoBehaviour
 
             joints[k] = p;
         }
+        KeepJointsOutOfBody();
+    }
+
+    // Le milieu de la tentacule contourne le buste au lieu de le traverser (racine et pied non touchés)
+    void KeepJointsOutOfBody()
+    {
+        // Les racines sont déjà près du centre : près de la racine, le rayon est réduit à ce qu'un os
+        // peut atteindre en partant tout droit vers l'extérieur.
+        float rootRadius = Vector3.ProjectOnPlane(bones[0].position - stepper.BodyCenter, Vector3.up).magnitude;
+        for (int k = 1; k < joints.Length - 1; k++)
+        {
+            float radius = Mathf.Min(settings.tentacleClearance, rootRadius + cumLen[k] * 0.7f);
+            joints[k] = stepper.PushOutOfBody(joints[k], radius);
+        }
     }
 
     void SolveLengths(Vector3 root, Vector3 foot)
@@ -223,6 +237,8 @@ public class TentacleCurveIK : MonoBehaviour
             joints[n - 1] = foot;
             for (int k = n - 2; k >= 0; k--)
                 joints[k] = joints[k + 1] + (joints[k] - joints[k + 1]).normalized * segLen[k];
+
+            KeepJointsOutOfBody();
 
             joints[0] = root;
             for (int k = 1; k < n; k++)

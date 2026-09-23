@@ -16,6 +16,18 @@ public class TentacleGroupManager : MonoBehaviour
     private int nextGroup = -1;
     private float lastLandTime = float.NegativeInfinity;
 
+    // Centre du corps (moyenne des racines des tentacules), en espace du corps
+    private Vector3 rootSum;
+    private int rootCount;
+
+    public void RegisterRoot(Vector3 rootLocal)
+    {
+        rootSum += rootLocal;
+        rootCount++;
+    }
+
+    public Vector3 BodyCenterLocal => rootCount > 0 ? rootSum / rootCount : Vector3.zero;
+
     void Awake()
     {
         airborne = new int[groupCount];

@@ -18,7 +18,12 @@ public class TentacleIKSettings : ScriptableObject
     public float stepOvershoot = 0.45f;
     [Tooltip("Étirement maximal, en fraction de la longueur de la tentacule (distance racine -> pied). Au-delà, " +
              "la tentacule fait un pas même si ce n'est pas le tour de son groupe (démarrage brusque, demi-tour).")]
-    [Range(0.8f, 2f)] public float maxReachRatio = 1.5f;
+    [Range(0.8f, 2f)] public float maxReachRatio = 1.2f;
+    [Tooltip("Allonge (fraction de la longueur, racine -> pied) à partir de laquelle la tentacule veut faire un pas, " +
+             "même si stepThreshold n'est pas atteint. Évite les tentacules tendues toutes droites à l'arrière.")]
+    [Range(0.6f, 1.2f)] public float comfortReachRatio = 0.95f;
+    [Tooltip("Allonge maximale (fraction de la longueur) du point où le pied atterrit.")]
+    [Range(0.5f, 1f)] public float landingReachRatio = 0.85f;
     [Tooltip("Vitesse (m/s) à partir de laquelle l'overshoot est appliqué en entier (plus lent = pas plus courts).")]
     public float fullStrideSpeed = 2f;
     [Tooltip("Lissage de la vitesse mesurée de l'ancre (plus grand = plus réactif).")]
@@ -31,7 +36,24 @@ public class TentacleIKSettings : ScriptableObject
     public float settleThreshold = 0.1f;
 
     [Header("Trajectoire du pas")]
+    [Tooltip("Durée d'un pas.")]
     public float stepDuration = 0.2f;
+    [Tooltip("Vrai : quand le corps va vite, les pas sont raccourcis (jusqu'à minStepDuration) pour que les pieds " +
+             "restent plantés. Faux : les pas durent toujours stepDuration, et les pieds posés glissent au sol " +
+             "quand la tentacule arrive au bout de son allonge.")]
+    public bool adaptStepToSpeed = true;
+    [Tooltip("Durée minimale d'un pas quand adaptStepToSpeed est actif.")]
+    public float minStepDuration = 0.3f;
+    [Tooltip("Allonge maximale (fraction de la longueur) d'un pied posé : au-delà, il glisse vers la tentacule " +
+             "au lieu de la laisser tendue toute droite.")]
+    [Range(0.8f, 1.3f)] public float slideReachRatio = 1.05f;
+
+    [Header("Évitement du corps")]
+    [Tooltip("Rayon (m, à plat) autour du centre du corps où les pieds ne vont pas : ils le contournent " +
+             "par leur côté pendant le pas, et un pied posé qui y entre fait un pas ou glisse sur le bord.")]
+    public float bodyClearance = 0.85f;
+    [Tooltip("Rayon (m, à plat) dont on écarte le milieu des tentacules pour qu'elles ne traversent pas le buste.")]
+    public float tentacleClearance = 0.65f;
     [Tooltip("Hauteur (m) de l'arc. Garder nettement inférieur à stepThreshold, sinon le pas paraît vertical.")]
     public float stepHeight = 0.25f;
 

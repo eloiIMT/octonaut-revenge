@@ -18,12 +18,19 @@ MonoBehaviour:
   tolerance: 0.01
   stepThreshold: 0.6
   stepOvershoot: 0.45
-  maxReachRatio: 1.5
+  maxReachRatio: 1.2
+  comfortReachRatio: 0.95
+  landingReachRatio: 0.85
   fullStrideSpeed: 2
   velocitySmoothing: 10
   settleDelay: 0.3
   settleThreshold: 0.1
-  stepDuration: 0.2
+  stepDuration: 0.6
+  adaptStepToSpeed: 1
+  minStepDuration: 0.38
+  slideReachRatio: 1.05
+  bodyClearance: 0.85
+  tentacleClearance: 0.65
   stepHeight: 0.25
   useCurveSolver: 1
   rootAim: 0.5
@@ -32,12 +39,12 @@ MonoBehaviour:
   minBulge: 0.3
   endHandleRatio: 0.7
   stepTipDrag: 0.8
-  shapeSmoothing: 12
+  shapeSmoothing: 2
   fabrikIterations: 3
   waveAmplitude: 0.02
   waveStepAmplitude: 0.06
   waveFrequency: 1
-  waveSpeed: 4
+  waveSpeed: 0.5
   groupJoinFraction: 0.35
   groupJoinWindow: 0.08
   turnGrace: 0.15
