@@ -16,9 +16,31 @@ MonoBehaviour:
   tipRotationWeight: 0.5
   maxIterations: 10
   tolerance: 0.01
-  stepThreshold: 0.5
-  stepDuration: 0.25
-  stepHeight: 0.3
-  forwardStepBias: 0.3
+  stepThreshold: 0.6
+  stepOvershoot: 0.45
+  maxReachRatio: 1.5
+  fullStrideSpeed: 2
+  velocitySmoothing: 10
+  settleDelay: 0.3
+  settleThreshold: 0.1
+  stepDuration: 0.2
+  stepHeight: 0.25
+  useCurveSolver: 1
+  rootAim: 0.5
+  rootReach: 0.4
+  footReach: 0.15
+  minBulge: 0.3
+  endHandleRatio: 0.7
+  stepTipDrag: 0.8
+  shapeSmoothing: 12
+  fabrikIterations: 3
+  waveAmplitude: 0.02
+  waveStepAmplitude: 0.06
+  waveFrequency: 1
+  waveSpeed: 4
+  groupJoinFraction: 0.35
+  groupJoinWindow: 0.08
+  turnGrace: 0.15
   raycastHeight: 1
   raycastDistance: 3
+  danglingFollowSpeed: 8

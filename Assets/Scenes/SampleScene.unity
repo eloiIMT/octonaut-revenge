@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e303fc42e583e0343b8220f3d9cda6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TentacleGroupManager
+  groupCount: 2
 --- !u!1 &310336591
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,6 +578,7 @@ GameObject:
   - component: {fileID: 407858332}
   - component: {fileID: 407858333}
   - component: {fileID: 407858334}
+  - component: {fileID: 407858335}
   m_Layer: 0
   m_Name: IK_Tentacule6
   m_TagString: Untagged
@@ -645,6 +647,18 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: 7ecdb8fa5ef1b064cab7788e569d8816, type: 2}
   groupManager: {fileID: 275099383}
   groupId: 1
+--- !u!114 &407858335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407858331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ba8a0c65adefe4f918974d15897a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TentacleCurveIK
 --- !u!1 &409947030
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +767,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1181,6 +1195,7 @@ GameObject:
   - component: {fileID: 1388132249}
   - component: {fileID: 1388132250}
   - component: {fileID: 1388132251}
+  - component: {fileID: 1388132252}
   m_Layer: 0
   m_Name: IK_Tentacule5
   m_TagString: Untagged
@@ -1249,6 +1264,18 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: 7ecdb8fa5ef1b064cab7788e569d8816, type: 2}
   groupManager: {fileID: 275099383}
   groupId: 0
+--- !u!114 &1388132252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388132248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ba8a0c65adefe4f918974d15897a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TentacleCurveIK
 --- !u!1 &1467924731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,6 +1411,7 @@ GameObject:
   - component: {fileID: 1566249896}
   - component: {fileID: 1566249897}
   - component: {fileID: 1566249898}
+  - component: {fileID: 1566249899}
   m_Layer: 0
   m_Name: IK_Tentacule7
   m_TagString: Untagged
@@ -1452,6 +1480,18 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: 7ecdb8fa5ef1b064cab7788e569d8816, type: 2}
   groupManager: {fileID: 275099383}
   groupId: 0
+--- !u!114 &1566249899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566249895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ba8a0c65adefe4f918974d15897a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TentacleCurveIK
 --- !u!1 &1626517482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,6 +1503,7 @@ GameObject:
   - component: {fileID: 1626517483}
   - component: {fileID: 1626517484}
   - component: {fileID: 1626517485}
+  - component: {fileID: 1626517486}
   m_Layer: 0
   m_Name: IK_Tentacule2
   m_TagString: Untagged
@@ -1531,6 +1572,18 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: 7ecdb8fa5ef1b064cab7788e569d8816, type: 2}
   groupManager: {fileID: 275099383}
   groupId: 0
+--- !u!114 &1626517486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626517482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ba8a0c65adefe4f918974d15897a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TentacleCurveIK
 --- !u!1 &1686466254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,6 +1595,7 @@ GameObject:
   - component: {fileID: 1686466255}
   - component: {fileID: 1686466256}
   - component: {fileID: 1686466257}
+  - component: {fileID: 1686466258}
   m_Layer: 0
   m_Name: IK_Tentacule8
   m_TagString: Untagged
@@ -1610,6 +1664,18 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: 7ecdb8fa5ef1b064cab7788e569d8816, type: 2}
   groupManager: {fileID: 275099383}
   groupId: 1
+--- !u!114 &1686466258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686466254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ba8a0c65adefe4f918974d15897a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TentacleCurveIK
 --- !u!1 &1689182590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,6 +2005,7 @@ GameObject:
   - component: {fileID: 2056272974}
   - component: {fileID: 2056272975}
   - component: {fileID: 2056272976}
+  - component: {fileID: 2056272977}
   m_Layer: 0
   m_Name: IK_Tentacule3
   m_TagString: Untagged
@@ -2007,6 +2074,18 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: 7ecdb8fa5ef1b064cab7788e569d8816, type: 2}
   groupManager: {fileID: 275099383}
   groupId: 1
+--- !u!114 &2056272977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056272973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ba8a0c65adefe4f918974d15897a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TentacleCurveIK
 --- !u!4 &50021417565610780
 Transform:
   m_ObjectHideFlags: 0
